@@ -16,28 +16,28 @@ The Smart IV Fluid Monitoring System is an IoT-based healthcare solution that co
 - Wireless notifications using Wi-Fi
 - Low-cost and easy to implement
 
-## Hardware Components
+## System Components
 
-- ESP32
-- Load Cell
-- HX711 Load Cell Amplifier
-- Buzzer
-- LED
-- OLED Display (Optional)
-- Breadboard
-- Jumper Wires
-- Power Supply
+- IV Bottle Volume Input
+- Drip Rate Input
+- Flow Rate Calculation Block
+- Integrator Block
+- Remaining Volume Calculation
+- Comparator Logic
+- Alert Display System
 
 ## Working Principle
 
-1. The IV bottle is placed on the load cell.
-2. The load cell continuously measures the bottle's weight.
-3. The HX711 converts the analog signal into digital data.
-4. ESP32 processes the readings.
-5. When the weight falls below the threshold:
-   - The buzzer sounds.
-   - The LED turns on.
-   - A notification is sent to the user.
+1. The initial IV bottle volume is provided as input.
+2. The drip rate is set as a constant.
+3. Simulink calculates the fluid flow rate.
+4. An integrator simulates the gradual decrease in fluid level over time.
+5. The remaining fluid volume is continuously monitored.
+6. Threshold values are checked using comparator blocks.
+7. Alerts are generated based on the fluid level:
+   - Normal Status
+   - Warning Alert (below 50 mL)
+   - Empty Alert (0 mL)
 
 ## Applications
 
